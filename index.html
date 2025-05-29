@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuxQuant VIP - Premium AI-Powered Crypto Trading Signals with 89.6% Win Rate. Join elite traders using advanced automation.">
+    <meta name="keywords" content="crypto trading, trading signals, bitcoin, ethereum, AI trading, automated trading">
+    <meta name="author" content="LuxQuant VIP">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="LuxQuant VIP - Premium Crypto Trading Signals">
+    <meta property="og:description" content="AI-Powered Trading Excellence with 89.6% Win Rate">
+    <meta property="og:image" content="https://luxquant.online/og-image.jpg">
+    <meta property="og:url" content="https://luxquant.online">
+    <meta property="og:type" content="website">
+    
+    <title>LuxQuant VIP - Premium AI Crypto Trading Signals | 89.6% Win Rate</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+</head>
+<body class="loading">
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="loader-text">LUXQUANT</span>
+                <span class="loader-vip">VIP</span>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar" id="loaderProgressBar"></div>
+            </div>
+            <div class="loader-percentage" id="loaderPercentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Inline script for immediate loader handling -->
+    <script>
+        // Fallback to remove loader if JS fails
+        setTimeout(function() {
+            var loader = document.getElementById('loader');
+            if (loader && !loader.classList.contains('hidden')) {
+                loader.classList.add('hidden');
+                document.body.classList.remove('loading');
+                document.body.style.overflow = 'auto';
+            }
+        }, 3000);
+    </script>
+
+    <!-- Mouse Follower -->
+    <div class="mouse-follower"></div>
+    <div class="mouse-dot"></div>
+
+    <!-- Background Effects -->
+    <div class="bg-container">
+        <div class="bg-gradient"></div>
+        <canvas id="particles-canvas"></canvas>
+        <div class="mesh-gradient"></div>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-chart" data-float="1"></div>
+        <div class="floating-chart" data-float="2"></div>
+        <div class="floating-chart" data-float="3"></div>
+    </div>
+
+    <!-- Live Price Ticker -->
+    <div class="price-ticker-wrapper">
+        <div class="price-ticker" id="priceTicker">
+            <div class="ticker-content">
+                <span class="ticker-item" data-crypto="BTC">
+                    <img src="https://s2.coinmarketcap.com/static/img/coins/32x32/1.png" alt="BTC">
+                    <span class="ticker-symbol">BTC</span>
+                    <span class="ticker-price">$0</span>
+                    <span class="ticker-change positive">+0%</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo-wrapper">
+                    <a href="#home" class="logo">
+                        <span class="logo-text">LUXQUANT</span>
+                        <span class="logo-vip">VIP</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" data-nav="home">Home</a></li>
+                    <li><a href="#why-choose" data-nav="why-choose">Why Choose</a></li>
+                    <li><a href="#features" data-nav="features">Features</a></li>
+                    <li><a href="#performance" data-nav="performance">Performance</a></li>
+                    <li><a href="#testimonials" data-nav="testimonials">Reviews</a></li>
+                    <li><a href="#pricing" data-nav="pricing">Pricing</a></li>
+                    <li class="nav-cta">
+                        <a href="https://linktr.ee/LuxQuantVIP" class="nav-btn-primary">
+                            <span>Join VIP</span>
+                            <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20">
+                                <path d="M5 10h10m0 0l-3-3m3 3l-3 3" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg-effects">
+                <div class="hero-glow"></div>
+                <div class="hero-grid"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-badge" data-aos="fade-down">
+                    <span class="badge-icon">✨</span>
+                    <span>AI-Powered Trading Excellence</span>
+                </div>
+                
+                <!-- Logo Section -->
+                <div class="hero-logo-wrapper" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="logo.png" alt="LuxQuant VIP Logo" class="hero-logo-img">
+                </div>
+                
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                    <span class="title-line">Premium Crypto</span>
+                    <span class="title-line gradient-text">Trading Signals</span>
+                </h1>
+                
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+                    Join thousands of successful traders using our AI-powered signals
+                    <br>with <span class="highlight-number">89.6%</span> proven win rate
+                </p>
+                
+                <!-- Marketing Text -->
+                <div class="hero-marketing" data-aos="fade-up" data-aos-delay="350">
+                    <p class="marketing-text">
+                        🚀 <strong>Transform Your Trading Today!</strong> Get instant access to professional-grade signals, 
+                        real-time market analysis, and 24/7 support from our expert team.
+                    </p>
+                </div>
+
+                <!-- Live Stats Cards -->
+                <div class="live-stats" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card live" data-stat="winrate">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="liveWinRate">89.6%</span>
+                            <span class="stat-label">Win Rate</span>
+                        </div>
+                        <div class="stat-sparkline">
+                            <canvas id="winrateSparkline"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card live" data-stat="signals">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="liveTotalSignals">1,822</span>
+                            <span class="stat-label">Total Signals</span>
+                        </div>
+                        <div class="stat-indicator positive">+127 today</div>
+                    </div>
+                    
+                    <div class="stat-card live" data-stat="active">
+                        <div class="stat-icon">🟢</div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="liveActiveUsers">2,847</span>
+                            <span class="stat-label">Active Traders</span>
+                        </div>
+                        <div class="stat-pulse"></div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://linktr.ee/LuxQuantVIP" class="btn btn-primary btn-glow">
+                        <span>Start Trading Now</span>
+                        <svg class="btn-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </a>
+                    <a href="#performance" class="btn btn-secondary">
+                        <span>View Live Results</span>
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="trust-indicators" data-aos="fade-up" data-aos-delay="500">
+                    <div class="trust-item">
+                        <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m-5-8a9 9 0 110 18 9 9 0 010-18z" stroke="currentColor" fill="none"/>
+                        </svg>
+                        <span>Verified Results</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M10 2v16m-8-8h16" stroke="currentColor" fill="none"/>
+                        </svg>
+                        <span>24/7 Support</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M3 6l7-3 7 3v8c0 2-7 6-7 6s-7-4-7-6V6z" stroke="currentColor" fill="none"/>
+                        </svg>
+                        <span>Secure Platform</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span>Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- Performance Chart Section -->
+        <section class="performance-showcase">
+            <div class="container">
+                <div class="performance-header" data-aos="fade-up">
+                    <span class="section-label">Real-Time Analytics</span>
+                    <h2 class="section-title">
+                        <span id="chartPeriodText">Last 30 Days</span>
+                        <span class="gradient-text">Performance</span>
+                    </h2>
+                </div>
+
+                <div class="performance-chart-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="chart-controls">
+                        <div class="chart-tabs">
+                            <button class="chart-tab active" data-period="30d">30 Days</button>
+                            <button class="chart-tab" data-period="7d">7 Days</button>
+                            <button class="chart-tab" data-period="24h">24 Hours</button>
+                        </div>
+                        <div class="chart-actions">
+                            <button class="chart-refresh" id="refreshChart">
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M4 10a6 6 0 0112 0M16 10a6 6 0 01-12 0" stroke="currentColor" fill="none"/>
+                                </svg>
+                            </button>
+                            <button class="chart-fullscreen" id="fullscreenChart">
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M3 3h5m9 0h-5m5 0v5m0 9v-5m-14 5v-5m0-9v5" stroke="currentColor" fill="none"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                        <div class="chart-tooltip" id="chartTooltip"></div>
+                    </div>
+
+                    <div class="chart-stats">
+                        <div class="chart-stat-item">
+                            <span class="stat-label">Total Signals</span>
+                            <span class="stat-value" id="chartTotalSignals">1,822</span>
+                        </div>
+                        <div class="chart-stat-item success">
+                            <span class="stat-label">Successful</span>
+                            <span class="stat-value" id="chartSuccessful">1,524</span>
+                        </div>
+                        <div class="chart-stat-item danger">
+                            <span class="stat-label">Stop Loss</span>
+                            <span class="stat-value" id="chartStopLoss">257</span>
+                        </div>
+                        <div class="chart-stat-item primary">
+                            <span class="stat-label">Win Rate</span>
+                            <span class="stat-value" id="chartWinRate">85.6%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose LuxQuant Section -->
+        <section id="why-choose" class="why-choose">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">
+                        <span>Why Choose LuxQuant?</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Advanced AI-powered trading signals with proven results
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">🎯</span>
+                        </div>
+                        <h3>Precision Signals</h3>
+                        <p>AI-powered analysis delivers highly accurate entry and exit points with detailed risk management.</p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">⚡</span>
+                        </div>
+                        <h3>Real-Time Alerts</h3>
+                        <p>Instant notifications via Telegram ensure you never miss profitable opportunities.</p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">📊</span>
+                        </div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Comprehensive market analysis, volume tracking, and sentiment indicators.</p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">🔒</span>
+                        </div>
+                        <h3>Risk Management</h3>
+                        <p>Every signal includes calculated stop-loss levels and position sizing recommendations.</p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">📈</span>
+                        </div>
+                        <h3>Proven Track Record</h3>
+                        <p>Transparent performance metrics with consistent profitability across all market conditions.</p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">🤖</span>
+                        </div>
+                        <h3>24/7 Automation</h3>
+                        <p>Round-the-clock market monitoring with automated signal generation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-label">Why Choose Us</span>
+                    <h2 class="section-title">
+                        <span>Advanced Trading</span>
+                        <span class="gradient-text">Features</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Everything you need to succeed in crypto trading
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">🎯</span>
+                        </div>
+                        <h3>AI-Powered Analysis</h3>
+                        <p>Advanced algorithms analyze market patterns 24/7 to identify high-probability trading opportunities.</p>
+                    </div>
+
+                    <div class="feature-card featured" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-badge">Most Popular</div>
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">⚡</span>
+                        </div>
+                        <h3>Instant Notifications</h3>
+                        <p>Real-time alerts delivered directly to your Telegram with precise entry and exit points.</p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">📊</span>
+                        </div>
+                        <h3>Market Analytics</h3>
+                        <p>Comprehensive market analysis with technical indicators and fundamental insights.</p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">🔒</span>
+                        </div>
+                        <h3>Secure Platform</h3>
+                        <p>Bank-level security protocols to protect your data and ensure safe trading environment.</p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">💎</span>
+                        </div>
+                        <h3>VIP Support</h3>
+                        <p>Dedicated support team available 24/7 to assist with any questions or concerns.</p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon-bg"></div>
+                            <span class="feature-icon">🚀</span>
+                        </div>
+                        <h3>Fast Execution</h3>
+                        <p>Lightning-fast signal delivery ensures you never miss a profitable opportunity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Trading Feed -->
+        <section class="trading-feed">
+            <div class="container">
+                <div class="feed-header">
+                    <h3>Live Trading Activity</h3>
+                    <div class="feed-status">
+                        <span class="status-dot"></span>
+                        <span>Real-time</span>
+                    </div>
+                </div>
+                <div class="feed-container" id="tradingFeed">
+                    <!-- Live trades will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-label">Success Stories</span>
+                    <h2 class="section-title">
+                        <span>What Our Members</span>
+                        <span class="gradient-text">Say About Us</span>
+                    </h2>
+                </div>
+
+                <div class="testimonials-slider" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="testimonial-text">
+                                "LuxQuant has completely transformed my trading journey. The signals are incredibly accurate and the risk management is top-notch. I've seen consistent profits month after month."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://i.pravatar.cc/150?img=1" alt="Alex Chen" class="author-avatar">
+                                <div class="author-info">
+                                    <h4>Alex Chen</h4>
+                                    <span>VIP Member since 2023</span>
+                                </div>
+                                <div class="testimonial-badge">Verified</div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="testimonial-text">
+                                "The best investment I've made in my trading career. Professional analysis, clear signals, and excellent support. The 89% win rate is real!"
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://i.pravatar.cc/150?img=2" alt="Sarah Johnson" class="author-avatar">
+                                <div class="author-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <span>Professional Trader</span>
+                                </div>
+                                <div class="testimonial-badge">Verified</div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="testimonial-text">
+                                "I was skeptical at first, but the results speak for themselves. LuxQuant delivers consistent, profitable signals with excellent risk management."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://i.pravatar.cc/150?img=3" alt="Mike Rodriguez" class="author-avatar">
+                                <div class="author-info">
+                                    <h4>Mike Rodriguez</h4>
+                                    <span>Crypto Investor</span>
+                                </div>
+                                <div class="testimonial-badge">Verified</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-controls">
+                    <button class="testimonial-prev" id="testimonialPrev">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </button>
+                    <button class="testimonial-next" id="testimonialNext">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-label">Membership Plans</span>
+                    <h2 class="section-title">
+                        <span>Choose Your</span>
+                        <span class="gradient-text">Trading Plan</span>
+                    </h2>
+                </div>
+
+                <div class="pricing-grid" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Monthly</h3>
+                            <div class="pricing-price">
+                                <span class="currency">$</span>
+                                <span class="amount">99</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                All trading signals
+                            </li>
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Real-time alerts
+                            </li>
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Risk management
+                            </li>
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                24/7 support
+                            </li>
+                        </ul>
+                        <a href="https://linktr.ee/LuxQuantVIP" class="pricing-btn">
+                            Get Started
+                        </a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Quarterly</h3>
+                            <div class="pricing-price">
+                                <span class="currency">$</span>
+                                <span class="amount">249</span>
+                                <span class="period">/3 months</span>
+                            </div>
+                            <span class="pricing-save">Save $48</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Everything in Monthly
+                            </li>
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Priority signals
+                            </li>
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Advanced analytics
+                            </li>
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                VIP community access
+                            </li>
+                        </ul>
+                        <a href="https://linktr.ee/LuxQuantVIP" class="pricing-btn primary">
+                            Get Started
+                        </a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Yearly</h3>
+                            <div class="pricing-price">
+                                <span class="currency">$</span>
+                                <span class="amount">799</span>
+                                <span class="period">/year</span>
+                            </div>
+                            <span class="pricing-save">Save $389</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Everything in Quarterly
+                            </li>
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Personal account manager
+                            </li>
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Custom strategies
+                            </li>
+                            <li>
+                                <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                API access
+                            </li>
+                        </ul>
+                        <a href="https://linktr.ee/LuxQuantVIP" class="pricing-btn">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pricing-guarantee" data-aos="fade-up" data-aos-delay="200">
+                    <svg class="guarantee-icon" width="40" height="40" viewBox="0 0 40 40">
+                        <path d="M20 5l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" stroke="currentColor" fill="none"/>
+                    </svg>
+                    <div class="guarantee-content">
+                        <h4>30-Day Money Back Guarantee</h4>
+                        <p>Not satisfied? Get a full refund within 30 days, no questions asked.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content" data-aos="zoom-in">
+                    <h2 class="cta-title">
+                        Ready to Start Your
+                        <span class="gradient-text">Profitable Trading Journey?</span>
+                    </h2>
+                    <p class="cta-subtitle">
+                        Join thousands of successful traders who trust LuxQuant for consistent profits
+                    </p>
+                    <div class="cta-stats">
+                        <div class="cta-stat">
+                            <span class="cta-stat-number">2,847+</span>
+                            <span class="cta-stat-label">Active Traders</span>
+                        </div>
+                        <div class="cta-stat">
+                            <span class="cta-stat-number">89.6%</span>
+                            <span class="cta-stat-label">Win Rate</span>
+                        </div>
+                        <div class="cta-stat">
+                            <span class="cta-stat-number">24/7</span>
+                            <span class="cta-stat-label">Support</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="https://linktr.ee/LuxQuantVIP" class="btn btn-primary btn-large">
+                            <span>Join VIP Now</span>
+                            <svg class="btn-icon" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/luxquanttrade" class="btn btn-secondary btn-large">
+                            <span>Follow on Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">LUXQUANT</span>
+                        <span class="logo-vip">VIP</span>
+                    </div>
+                    <p class="footer-desc">
+                        Premium AI-powered crypto trading signals with proven results
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/luxquanttrade" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" fill="none"/>
+                                <circle cx="12" cy="12" r="4" stroke="currentColor" fill="none"/>
+                                <circle cx="18" cy="6" r="1" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://t.me/luxquantvip" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm3.2 7.5l-1.5 7.1c-.1.5-.4.6-.8.4l-2.3-1.7-1.1 1.1c-.1.1-.2.2-.4.2l.2-2.4 4.3-3.9c.2-.2 0-.3-.3-.1l-5.3 3.3-2.3-.7c-.5-.2-.5-.5.1-.7l9-3.5c.4-.1.8.1.6.6z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/luxquantvip" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M22 5.8a8.5 8.5 0 01-2.4.7 4.2 4.2 0 001.8-2.3c-.8.5-1.6.8-2.5 1a4.1 4.1 0 00-7 3.7A11.6 11.6 0 013.4 4.7a4.1 4.1 0 001.3 5.5c-.7 0-1.3-.2-1.8-.5v.1c0 2 1.4 3.6 3.3 4a4.1 4.1 0 01-1.9.1 4.1 4.1 0 003.8 2.8A8.2 8.2 0 012 18.4a11.6 11.6 0 006.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#performance">Performance</a></li>
+                            <li><a href="#testimonials">Reviews</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Trading Hours</h4>
+                        <ul>
+                            <li>Signals: 24/7</li>
+                            <li>Support: 24/7</li>
+                            <li>Market Analysis: Daily</li>
+                            <li>VIP Updates: Real-time</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LuxQuant VIP. All rights reserved.</p>
+                <p class="footer-disclaimer">
+                    Trading involves risk. Past performance is not indicative of future results.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification System -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience. By continuing, you agree to our use of cookies.</p>
+            <div class="cookie-actions">
+                <button class="cookie-accept" id="acceptCookies">Accept</button>
+                <button class="cookie-decline" id="declineCookies">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M12 19V5m0 0l-6 6m6-6l6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize loader immediately
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Loaded - Initializing...');
+            
+            // Remove loading class and loader after content loads
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    var loader = document.getElementById('loader');
+                    if (loader) {
+                        loader.classList.add('hidden');
+                        document.body.classList.remove('loading');
+                        document.body.style.overflow = '';
+                    }
+                }, 1000);
+            });
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -677,7 +677,7 @@ section {
     background: var(--gradient-gold);
     color: var(--bg-dark);
     font-weight: 700;
-    border-radius: 50px;
+    border-radius: 16px;
     text-decoration: none;
     transition: all var(--transition-base);
     position: relative;
